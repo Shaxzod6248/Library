@@ -17,10 +17,16 @@ class Category(models.Model):
         return self.name
 
 
-class Product(models.Model):
+class Book(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=300, null=True)
     image = models.ImageField(upload_to="Kutubxona_image", null=True)
 
     def __str__(self):
         return self.title
+
+
+class BookSearch(models.Model):
+    name_of_book = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name_of_book
