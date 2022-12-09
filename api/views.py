@@ -7,9 +7,9 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 
 
-class ProductViewSet(viewsets.ModelViewSet):
+class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
-    serializer_class = ProductSerializer
+    serializer_class = BookSerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):

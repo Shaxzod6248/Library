@@ -10,7 +10,7 @@ from rest_framework_simplejwt.views import (
 
 router = DefaultRouter()
 router.register('Category', CategoryViewSet)
-router.register('Products', ProductViewSet)
+router.register('Books', BookViewSet)
 
 
 urlpatterns = [
