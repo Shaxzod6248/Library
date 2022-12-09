@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Kitoblar sayti | Qidirilgan kitoblar</title>
+{% endblock %}
+{% block content %}
+
+
+<div class = 'container'>
+    <div class = 'row'><h4>Topilgan kitoblar</h4></div>
+    <div class = 'row'>
+        {% if searched_books %}
+       {% for book in searched_books %}
+      <div class = 'col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2'>
+        <a href = "">
+          <div>
+            <div class="uk-card uk-card-default uk-card-body"> 
+                <img src = "{{book.image.url}}">
+            </div>
+        </div>
+      </a>
+      </div>
+      {% endfor %}
+      {% else %}
+      <div class = 'row'>
+          <h3>Kitob topilmadi! Keyinroq urinib ko'ring</h3>
+      </div>
+      {% endif %}
+      
+
+    </div>
+  </div>
+  {% endblock %}
