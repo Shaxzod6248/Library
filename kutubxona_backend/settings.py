@@ -24,6 +24,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'storages',
     'drf_yasg',
+    'rest_framework.authtoken',
+    'django_filters',
+    'rest_framework_simplejwt',
 ]
 
 
@@ -35,8 +38,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
 ]
+
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 REST_FRAMEWORK = {
