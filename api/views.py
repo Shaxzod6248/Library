@@ -17,38 +17,3 @@ class BookViewSet(viewsets.ModelViewSet):
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-
-
-class AuthorListView(generics.ListCreateAPIView):
-    queryset = Author.objects.all()
-    serializer_class = AuthorSerializer
-
-
-class AuthorDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Author.objects.all()
-    serializer_class = AuthorSerializer
-
-
-class BookListView(generics.ListCreateAPIView):
-    queryset = Book.objects.all()
-    serializer_class = BookSerializer
-
-
-class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Book.objects.all()
-    serializer_class = BookSerializer
-
-
-class AuthorListView(generics.ListCreateAPIView):
-    queryset = Author.objects.all()
-    serializer_class = AuthorSerializer
-    pagination_class = LimitOffsetPagination
-    filterset_fields = '__all__'
-
-# ...
-
-class BookListView(generics.ListCreateAPIView):
-    queryset = Book.objects.all()
-    serializer_class = BookSerializer
-    filterset_fields = ['title']
-    search_fields = ['title']

@@ -15,8 +15,4 @@ router.register('Books', BookViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('books/', BookListView.as_view()),
-    path('books/<int:pk>', BookDetailView.as_view()),
-    path('authors/', AuthorListView.as_view()),
-    path('authors/<int:pk>', AuthorDetailView.as_view()),
 ]
