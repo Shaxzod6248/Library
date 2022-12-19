@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from .models import Book
+from api.serializers import *
+from rest_framework import generics
+from .utils import *
 
 
-def search_book(request):
-    searched_books = Book.objects.filter(title__icontains = request.POST.get('name_of_book'))
+def Book(request):
+    books, search_query = searchBooks(request)
+    context = {'search_query': search_query}
+
+
