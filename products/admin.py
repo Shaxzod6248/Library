@@ -3,4 +3,3 @@ from .models import *
 
 
 admin.site.register(Book)
-admin.site.register(BookSearch)
