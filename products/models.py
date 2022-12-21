@@ -21,6 +21,6 @@ class Book(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=300, null=True)
     image = models.ImageField(upload_to="Kutubxona_image", null=True)
-
+    file = models.FileField(upload_to='books', null=True)
     def __str__(self):
         return self.title
